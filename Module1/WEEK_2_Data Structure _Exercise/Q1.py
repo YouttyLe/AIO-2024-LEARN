@@ -1,20 +1,14 @@
-def sliding_window_max(num_list, k):
-  n = len(num_list)
-  if k <= 1 or k > n:
-    return []
-  max_values = []
-  for i in range(n - k + 1):
-    window = num_list[i:i + k]
-    max_value = max(window)
-    max_values.append(max_value)
-  return max_values
-def main():
-    num_list_str = input("Enter list integer: ")
-    num_list = [int(x) for x in num_list_str.split()]
-    k = int(input("Enter k: "))
-    max_values = sliding_window_max(num_list, k)
-    print(max_values)
+def sliding_window_maximum(num_list, k):
+    if k < 1:
+        return []
+    max_values = []
+    for i in range(len(num_list) - k + 1):
+        window = num_list[i:i + k]
+        max_values.append(max(window))
 
-  
-if __name__ == '__main__':
-    main()
+    return max_values
+
+num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1]
+k = 3
+result = sliding_window_maximum(num_list, k)
+print(result)
