@@ -1,14 +1,11 @@
-def sliding_window_maximum(num_list, k):
-    if k < 1:
-        return []
-    max_values = []
+def max_kernel(num_list, k):
+    res = []
     for i in range(len(num_list) - k + 1):
-        window = num_list[i:i + k]
-        max_values.append(max(window))
+        res.append(max(num_list[i: i + k]))
+    return res
 
-    return max_values
 
-num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1]
-k = 3
-result = sliding_window_maximum(num_list, k)
-print(result)
+if __name__ == "__main__":
+    num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1]
+    k = 3
+    print(max_kernel(num_list, k))
