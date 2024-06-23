@@ -8,8 +8,8 @@ class ArrayStack:
         return len(self.data)
     def is_empty(self):
         if len(self.data) is None:
-            return True
-        return False
+            return "list is empty"
+        return "List is not empty"
     def push(self, new_data):
         "push elements in stack"
         self.data.append(new_data)
